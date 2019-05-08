@@ -1,0 +1,29 @@
+nodes:
+  - address: 192.168.1.211
+    user: marcstreeter
+    role: [controlplane,etcd]
+    ssh_agent_auth: true
+    ssh_key_path: /Users/marcstreeter/.ssh/id_rsa
+  - address: 192.168.1.201
+    user: marcstreeter
+    role: [worker,etcd]
+    ssh_agent_auth: true
+    ssh_key_path: /Users/marcstreeter/.ssh/id_rsa
+  - address: 192.168.1.202
+    user: marcstreeter
+    role: [worker,etcd]
+    ssh_agent_auth: true
+    ssh_key_path: /Users/marcstreeter/.ssh/id_rsa
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+  kubelet:  # this part is for rook
+    extra_args:
+      volume-plugin-dir: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
+    extra_binds:
+      - /usr/libexec/kubernetes/kubelet-plugins/volume/exec:/usr/libexec/kubernetes/kubelet-plugins/volume/exec
+  
+cluster_name: fujimoto

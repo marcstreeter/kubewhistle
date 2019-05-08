@@ -1,0 +1,25 @@
+# after installing this service account
+#     kubectl apply -f helm-user.yaml
+# you may install tiller on your cluster (from the comfort of your laptop that can already do `kubectl get nodes`)
+#     helm init --service-account tiller --history-max 200
+# tiller will then be installed on your cluster and you can see it by looking at your kube-system pods
+#     kubectl get pods -n kube-sytem
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system

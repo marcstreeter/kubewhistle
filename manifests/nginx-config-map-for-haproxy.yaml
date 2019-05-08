@@ -1,0 +1,12 @@
+# This in conjunction with the correct HAProxy settings will allow
+# you to have a HAProxy loadbalancer that proxies requests to your
+# nginx ingress controller
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configuration
+  namespace: ingress-nginx
+  labels:
+    app: ingress-nginx
+data:
+  use-proxy-protocol: "true"
