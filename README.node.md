@@ -5,7 +5,6 @@ This preparation (like all files here) assumes you're running Ubuntu 18.04.  Thi
     - `sudo apt-get install ssh`
     - log in to all nodes to execute the following simultaneously
 - Sudo No Password
-    Edit your sudo rights via visudo
 	```bash
     sudo visudo
     ```
