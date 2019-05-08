@@ -20,9 +20,9 @@ This preparation (like all files here) assumes you're running Ubuntu 18.04.  Thi
 - Setup ssh key connection
     - Install vim 
        ```
-          sudo apt-get install vim
+       sudo apt-get install vim
        ```
     - Make sure you clear out any entries in `~/.ssh/known_hosts` that match your node ip’s
        ```
-          ssh-copy-id <USERNAME>@<IP-ADDRESS-NOT-HOSTNAME-IN-HOSTS-FILE>
+       ssh-copy-id <USERNAME>@<IP-ADDRESS-NOT-HOSTNAME-IN-HOSTS-FILE>
        ```
