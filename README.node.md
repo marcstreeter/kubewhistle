@@ -15,7 +15,7 @@ This preparation (like all files here) assumes you're running Ubuntu 18.04.  Thi
     ```
 - Set static ip for each node [more info](https://www.tecmint.com/configure-network-static-ip-address-in-ubuntu/)
     - Get gateway: `ip route | grep default` (remember 192.168.1.X gateway ip and enXXXX)
-    - create/update file /etc/netplan/01-netcfg.yaml (view template)[./templates/01-netcfg.yaml]
+    - create/update file /etc/netplan/01-netcfg.yaml [view template]()./templates/01-netcfg.yaml)
     -  Run `sudo netplan apply` to apply
 - Setup ssh key connection
     - Install vim 
