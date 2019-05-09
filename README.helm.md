@@ -3,7 +3,7 @@ To use helm with tiller (that may change in the near future) it must be [install
 
 - Install helm on your laptop (that will be driving installs)
 ```
-brew install helm
+brew install kubernetes-helm
 helm init --client-only
 ```
 - Create Service Account ony your cluster for Helm Tiller using (template)[./manifests/helm-user.yaml]

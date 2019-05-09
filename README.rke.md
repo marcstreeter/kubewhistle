@@ -62,27 +62,9 @@ You would then [access it](http://127.0.0.1:8001/api/v1/namespaces/kube-system/s
 kubectl proxy
 ```
 
-# Install Helm Chart Repository
-Currently uses helm with tiller (that may change in the near future) and so it [must be installed](https://helm.sh/docs/using_helm/#installing-helm).
+# Install Rancher
 
-- Install helm on your local computer (that will be driving installs)
-```
-brew install helm
-helm init --client-only
-```
-- Create Service Account ony your cluster for Helm Tiller using (template)[./manifests/helm-user.yaml]
-```
-kubectl apply -f helm-user.yaml
-```
-- Install tiller on your cluster using newly created service account/role
-```
-helm init --service-account tiller --history-max 200
-```
-- Validate Install (if it responds you're good to go)
-```
-helm version
-```
-- For further use you may want to review [it's big concepts](https://helm.sh/docs/using_helm/#three-big-concepts)
+- Install helm from [Helm README]()./README.helm.md)
 
 - Add helm Chart respository for rancher
 ```
