@@ -18,7 +18,7 @@ Here we take the Rancher route
         ```
         # TLDR
         sudo apt-get update
-        sudo apt-get install \
+        sudo apt-get install -y \
              apt-transport-https \
              ca-certificates \
              curl \
@@ -30,7 +30,7 @@ Here we take the Rancher route
              $(lsb_release -cs) \
              stable"
         sudo apt-get update
-        sudo apt-get install docker-ce docker-ce-cli containerd.io
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io
         sudo usermod -aG docker $USER
         # NEED TO OPEN NEW TERMINAL TO TAKE EFFECT
         # Ensure installed right version: Ubuntu 18.04 (64-bit) works with Docker 18.09.x
