@@ -10,6 +10,11 @@ From here you have the choice of installing from:
 - Kubespray [Ansible](./README.kubespray.md)
 
 # Basics
+- Enable Dashboard
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
+```
+*Use `kubectl proxy` before [accessing it](http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login)*
 - Enable Helm (may already have been done)
     - Install helm from [Helm README](./README.helm.md)
 - Enable Rook
