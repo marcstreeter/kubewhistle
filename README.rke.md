@@ -53,16 +53,6 @@ mkdir ~/.kube && cp ./templates/kube_config_rke-cluster.yaml ~/.kube/config
 Update your `~/.kube/config` file by changing the following `server: "https://192.168.1.211:6443"` to `server: "https://kubernetes:6443"`
 and add `192.168.1.211 kubernetes` to your `/etc/hosts` file (this could also be your public ip if you are forwarding traffic via HAProxy, for example)
 
-# Install Kubernetes Dashboard
-The dashboard is not installed by default but can be installed easily with
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
-```
-You would then [access it](http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login) after running
-```
-kubectl proxy
-```
-
 # Install Rancher
 
 - Install helm from [Helm README]()./README.helm.md)
