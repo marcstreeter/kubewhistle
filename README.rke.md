@@ -44,7 +44,7 @@ Running the following installs kubernetes (assuming your doing it from the root 
 ```
 *you could also have generated the `rke-cluster.yaml` file, this command is based off of the [template](./templates/rke-cluster.yaml)*
 
-RKE install outputs a config file in your the same working directy as the above yaml, you need to cp that to your `~/.kube/config` like so
+RKE install outputs a config file (along with other [important files](https://rancher.com/docs/rke/latest/en/installation/#kubernetes-cluster-state) necessary for updating) in your the same working directy as the above yaml, you need to cp that to your `~/.kube/config` like so
 
 ```
 mkdir ~/.kube && cp ./templates/kube_config_rke-cluster.yaml ~/.kube/config
