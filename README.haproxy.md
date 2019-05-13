@@ -14,7 +14,7 @@ sudo systemctl restart haproxy
 # Why
 
 #### Proxy requests to your cluster's main ports 80/443 to your Ingress Controller
-In order to proxy requests from your L4 load balancer to your layer 7 loadbalancer (application level) we'll be updating our HAProxy config file, `/etc/haproxy/haproxy.cfg`, and also applying a Config Map to our Nginx Ingress Controller. Much of the process (comes from this guide)[https://itnext.io/cluster-recipe-external-proxy-for-kubernetes-ingress-or-docker-compose-ingress-with-haproxy-on-f81e3adee5ef]
+In order to proxy requests from your L4 load balancer to your layer 7 loadbalancer (application level) we'll be updating our HAProxy config file, `/etc/haproxy/haproxy.cfg`, and also applying a Config Map to our Nginx Ingress Controller. Much of the process [comes from this guide](https://itnext.io/cluster-recipe-external-proxy-for-kubernetes-ingress-or-docker-compose-ingress-with-haproxy-on-f81e3adee5ef)
 
 - Add sections for frontend/backend for both secure/insecure traffic
 ```
@@ -37,9 +37,9 @@ backend https_back
   server s1 192.168.1.202:443 send-proxy
 ```
 
-- RKE already installed Nginx as a loadbalancer and it needs an extra option, `use-proxy-protocol`, as shown in the [template](./manifests/nginx-config-map-for-haproxy) to proxy requests, so you apply it
+- RKE already installed Nginx as a loadbalancer and it needs an extra option, `use-proxy-protocol`, as shown in the [template](./manifests/nginx-config-map-for-haproxy.yaml) to proxy requests, so you apply it
 ```
-kubectl apply -f nginx-config-map-for-haproxy.yaml
+kubectl apply -f ./manifests/nginx-config-map-for-haproxy.yaml
 ```
 
 #### Proxy requests to your cluster's KubeAPI so that you can use kubectl remotely
