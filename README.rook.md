@@ -1,7 +1,16 @@
 # Install Rook
 
-Assuming you've prepared your cluster for rook as mentioned in the other README's
+Assuming you've prepared your cluster for rook as mentioned in the other README's.
 
+## Prepare Rook
+Currently there is [additional software](https://github.com/rook/rook/issues/2591) that is needed for rook to [prevent osd problems](https://github.com/bigbitbus/rook/commit/5668131853bf57f20b86508049bd713b44befe0d). LVM2 must be installed
+```bash
+sudo apt-get install -y lvm2
+sudo shutdown -r now
+```
+**it is possible that in future versions**
+
+## Now you may install
 - Checkout the appropriate version:
 ```
 git clone https://github.com/rook/rook.git
