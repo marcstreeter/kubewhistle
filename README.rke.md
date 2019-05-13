@@ -42,12 +42,12 @@ Running the following installs kubernetes (assuming your doing it from the root 
 ```bash
     rke up --config ./templates/rke-cluster.yaml
 ```
-*you could also have generated the `rke-cluster.yml` file, this command is based off of the template*
+*you could also have generated the `rke-cluster.yaml` file, this command is based off of the [template](./templates/rke-cluster.yaml)*
 
-RKE Creates a resulting config file in your cwd that you need to cp to your `~/.kube/config` like so
+RKE install outputs a config file in your the same working directy as the above yaml, you need to cp that to your `~/.kube/config` like so
 
 ```
-cp ./kube_config_rancher-cluster.yml ~/.kube/config
+mkdir ~/.kube && cp ./templates/kube_config_rke-cluster.yaml ~/.kube/config
 ```
 
 Update your `~/.kube/config` file by changing the following `server: "https://192.168.1.211:6443"` to `server: "https://kubernetes:6443"`
