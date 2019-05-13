@@ -14,7 +14,7 @@ Here we take the Rancher route
     ```
     or [use prepared template](./templates/rke-cluster.yaml)
 - Prepare Nodes (where kubernetes will run)
-    - Install Docker (consult install reference)[https://docs.docker.com/install/linux/docker-ce/ubuntu/] and (post install refernce)[https://docs.docker.com/install/linux/linux-postinstall/] according to (node requirements)[https://rancher.com/docs/rancher/v2.x/en/installation/requirements/]
+    - Install Docker [consult install reference](https://docs.docker.com/install/linux/docker-ce/ubuntu/] and (post install refernce)[https://docs.docker.com/install/linux/linux-postinstall/) according to [node requirements](https://rancher.com/docs/rancher/v2.x/en/installation/requirements/)
         ```
         # TLDR
         sudo apt-get update
