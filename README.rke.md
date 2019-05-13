@@ -37,11 +37,12 @@ Here we take the Rancher route
         ```
 
 # Install Kubernetes
-Running the following installs kubernetes
+Running the following installs kubernetes (assuming your doing it from the root of this project, ie, here)
 
 ```
-rke up --config ./rke-cluster.yml  # or whatever you called your generated cluster yaml file
+    rke up --config ./templates/rke-cluster.yml
 ```
+*you could also have generated the `rke-cluster.yml` file, this command is based off of the template*
 
 RKE Creates a resulting config file in your cwd that you need to cp to your `~/.kube/config` like so
 
