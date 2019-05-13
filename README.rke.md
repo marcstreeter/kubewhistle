@@ -55,7 +55,7 @@ and add `192.168.1.211 kubernetes` to your `/etc/hosts` file (this could also be
 
 # Install Rancher
 
-- Install helm from [Helm README]()./README.helm.md)
+- Install helm from [Helm README](./README.helm.md)
 
 - Add helm Chart respository for rancher
 ```
