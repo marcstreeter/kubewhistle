@@ -82,7 +82,7 @@ helm install rancher-stable/rancher \
 
 # Prepare for Rook
 
-You've already been prepared for rook with the following section in your [rancher-cluster.yaml](./templates/rancher-cluster.yaml) file per instructions [from rook.io](https://rook.io/docs/rook/v1.0/flexvolume.html#platform-specific-flexvolume-path):
+You've already been prepared for rook with the following section in your [rke-cluster.yaml](./templates/rke-cluster.yaml) file per instructions [from rook.io](https://rook.io/docs/rook/v1.0/flexvolume.html#platform-specific-flexvolume-path):
 ```
 services:
   kubelet:
