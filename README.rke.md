@@ -39,8 +39,8 @@ Here we take the Rancher route
 # Install Kubernetes
 Running the following installs kubernetes (assuming your doing it from the root of this project, ie, here)
 
-```
-    rke up --config ./templates/rke-cluster.yml
+```bash
+    rke up --config ./templates/rke-cluster.yaml
 ```
 *you could also have generated the `rke-cluster.yml` file, this command is based off of the template*
 
