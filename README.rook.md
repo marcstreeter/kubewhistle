@@ -8,7 +8,7 @@ Currently there is [additional software](https://github.com/rook/rook/issues/259
 sudo apt-get install -y lvm2
 sudo shutdown -r now
 ```
-**it is possible that in future versions**
+**maybe in some future version of rook, this won't be needed, as of v1.0.0 it is needed**
 
 ## Now you may install
 - Checkout the appropriate version:
@@ -24,6 +24,7 @@ kubectl apply -f common.yaml
 kubectl apply -f operator.yaml
 kubectl -n rook-ceph get pod --watch
 ```
+*after about ~1 minute you should see a couple rook-ceph-agents, rook-ceph-operator, and a couple rook-discovers in running state*
 - Install Cluster (now that all previous deploys have finished)
 ```
 kubectl appy -f cluster.yaml
@@ -35,25 +36,23 @@ kubectl appy -f cluster.yaml
     - https://forums.rancher.com/t/rancher-2-x-rook-io-problem/10503/8
     - https://rook.io/docs/rook/v1.0/flexvolume.html#platform-specific-flexvolume-path
 
-# Create storage class and set as your default persistent storage
-If you don't want to have to specify the storage class when you deploy projects. Set the default [from the, storage-class.yaml, manifest](./manifests/storage-class.yaml) which applies the required annotation
+# Create default storage class
+If you want a default storage class set it using  the, [storage-class.yaml](./manifests/storage-class.yaml), manifest which applies the required annotation
 ```
-kubectl apply -f storage-class.yaml
+kubectl apply -f ./manifests/storage-class.yaml
 ```
 Confirm it's set with 
 ```
 kubectl get sc
 ```
-*based on https://rook.io/docs/rook/v0.9/ceph-block.html (removed `fstype: xfs` line to default instead to ext4)*
+*based on https://rook.io/docs/rook/v1.0/ceph-block.html (removed `fstype: xfs` line to default instead to ext4)*
 
-# Enable the Ceph Dashboard Externally
-Using the ingress controller
+# Enable External Ceph Dashboard
+*dashboard [isn't working](https://github.com/rook/rook/issues/3106) with v1.0.0*
+Using the ingress controller 
+
 ```
-kubectl apply -f rook-dashboard-ingress.yaml
-```
-or the NodePort (which requires more work to add an entry in your HAProxy config)
-```
-kubectl apply -f rook-dashboard-nodeport.yaml
+kubectl apply -f ./manifests/rook-dashboard-ingress.yaml
 ```
 Get your password to login in with `admin`:
 ```

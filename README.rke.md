@@ -76,9 +76,9 @@ helm install rancher-stable/rancher \
   --set hostname=rancher.kube.watch
 ```
 - Make sure that [HAProxy Forwarding is already set up](./README.haproxy.md)
-- Should be able to hit the site without problems 
+- Should be able to hit the site without problems (if you do, purge rancher chart and retry: v2.2.3 works!)
     - https://rancher.kube.watch/
-- After setting up your admin username/password it will take about 10 minutes for the cluster to go to a ready state
+- After setting up your admin username/password it will take ~5 minutes for the cluster to go to a ready state
 
 # Prepare for Rook
 

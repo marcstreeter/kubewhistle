@@ -1,11 +1,11 @@
 # Install Istio (using Helm)
 Assumes you've already enabled Helm
 
-- Pull down project and checkout correct version
+- Pull down project and [checkout correct version](https://github.com/istio/istio/releases)
 ```
 git clone https://github.com/istio/istio.git
 cd istio
-git checkout tags/1.1.5
+git checkout tags/1.1.6
 ```
 - Install init containers
 ```bash
