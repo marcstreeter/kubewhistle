@@ -30,6 +30,9 @@ jx install --provider=kubernetes \
 --domain=kube.watch
 ```
 
+Other Notes
+- had an issue installing once, it was giving me `401` errors. I uninstalled `jx` and also removed the `~/.jx` folder. I made sure that all the repo's I had created previously through jenkins-x were removed from my github account and also removed all the [personal access tokens](https://github.com/settings/tokens) that I had generated. In that way it prompted me for access again (providing a link to create the access token)
+
 NEXT STEPS
 - Jenkins X
     - https://www.youtube.com/watch?v=iytHDaLb3-Q
