@@ -4,7 +4,7 @@ Jenkins X OnPrem (not fully baked - still have to use )
 - Install jx 
   ```bash
   brew tap jenkins-x/jx
-  brew intall jx
+  brew install jx
   ```
 - Using helm for ingress controller:
   ```bash
