@@ -15,7 +15,8 @@ Jenkins X OnPrem (not fully baked - still have to use )
   ```
 - I'm still trying to get this to work (currently not working)
 ```
-jx install --provider=kubernetes --external-ip 192.168.1.211 \
+jx install --provider=kubernetes \
+    --external-ip=192.168.1.211 \
     --ingress-service=default-http-backend \
     --ingress-deployment=default-http-backend \
     --ingress-namespace=ingress-nginx \
