@@ -28,8 +28,6 @@ Here we take the kubespray route
         vi inventory/XXXX/inventory.ini
         ```
     - Enable Helm
-        - Update Ansible Config File [from template](./templates/ansible.cfg)
-        - Makesure that `ansible.cfg` is specifying right user ( 
         - Make sure helm enabled in `inventory/XXXX/group_vars/k8s-cluster/addons.yml`
     - Enable Remote Control 
         - Make change in `inventory/prod/group_vars/k8s-cluster/k8s-cluster.yml`
@@ -40,7 +38,9 @@ Here we take the kubespray route
     - PRE-CHECK node/master connectivity
         - Check to make sure that all are accessible
         `ansible -i inventory/<YOUR_DIRECTORY>/inventory.ini all -m ping`
-    - RUN INSTALL `ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini cluster.yml`
+    - RUN INSTALL `ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini cluster.yml -u marcstreeter`
+    
+    *instead of using `-u marcstreeter` you could instead up the `ansible.cfg` with [remote user](./templates/ansible.cfg)*
 ￼
 # Post Install
 - Enable Kubectl
