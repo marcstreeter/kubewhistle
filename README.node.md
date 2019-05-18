@@ -6,6 +6,12 @@ This preparation (like all files here) assumes you're running Ubuntu 18.04.  Thi
     - `sudo apt-get install ssh`
     - log in to all nodes to execute the following simultaneously
 
+# Prepare your laptop to communicate with each node
+- Setup ssh key connection
+    ```
+    ssh-copy-id <USERNAME>@<IP-ADDRESS-NOT-HOSTNAME-IN-HOSTS-FILE>
+    ```
+
 # On each node simultaneously
 Connect to each node and simultaneously (using iTerm or tmux) do the following
 - Sudo No Password
@@ -25,9 +31,4 @@ Connect to each node and simultaneously (using iTerm or tmux) do the following
     - create/update file `/etc/netplan/01-netcfg.yaml` [view template](./templates/01-netcfg.yaml)
     -  Run `sudo netplan apply` to apply
 
-# Prepare your laptop to communicate with each node
-- Setup ssh key connection
-    ```
-    ssh-copy-id <USERNAME>@<IP-ADDRESS-NOT-HOSTNAME-IN-HOSTS-FILE>
-    ```
 **Make sure you clear out any entries in `~/.ssh/known_hosts` that match your node ip’s**
