@@ -15,7 +15,7 @@ Here we take the kubespray route
     - Clone and Checkout a specific [version](https://github.com/kubernetes-sigs/kubespray/tags) of Kubespray
         - `git clone https://github.com/kubernetes-sigs/kubespray.git`
         - `cd ./kubespray`
-        - `git checkout tags/v2.9.0`
+        - `git checkout tags/v2.10.0`
         - `pip install -r requirements.txt`
     - Establish Nodes/Masters
         - Update Ansible Hosts file [from tempate](./templates/inventory.ini)
