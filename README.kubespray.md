@@ -42,7 +42,7 @@ Here we take the kubespray route
         ```
     - RUN INSTALL 
     ```bash
-    ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini cluster.yml -u marcstreeter
+    ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini -u marcstreeter cluster.yml 
     ```
     
     *instead of using `-u marcstreeter` you could instead up the `ansible.cfg` with [remote user](./templates/ansible.cfg)*
