@@ -24,7 +24,7 @@ Here we take the kubespray route
     - Establish Nodes/Masters
         - Update Ansible Hosts file [from tempate](./templates/inventory.ini)
         ```bash
-        cp -R inventory/sample inventory/XXXX
+        cp -rfp inventory/sample inventory/XXXX
         vi inventory/XXXX/inventory.ini
         ```
     - Enable Helm
