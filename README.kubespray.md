@@ -30,7 +30,7 @@ Here we take the kubespray route
     - Enable Helm
         - Make sure helm enabled in `inventory/XXXX/group_vars/k8s-cluster/addons.yml`
     - Enable Remote Control 
-        - Make change in `inventory/prod/group_vars/k8s-cluster/k8s-cluster.yml`
+        - Make change in `inventory/XXXX/group_vars/k8s-cluster/k8s-cluster.yml`
         - Set `supplementary_addresses_in_ssl_keys` with external ip (should see a comment there about how to)
         - NOTE: if you’re adding it after the fact, you’ll have to delete the `/etc/kubernetes/ssl/apiserver.*` cert files on each master (that way running it again replaces those certs
             - Check https://github.com/kubernetes-sigs/kubespray/issues/2164
