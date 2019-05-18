@@ -1,3 +1,10 @@
+# Current Issues
+These may block your desire to install rook
+
+- https://github.com/rook/rook/issues/3157
+- 
+
+
 # Install Rook
 
 Assuming you've prepared your cluster for rook as mentioned in the other README's.
