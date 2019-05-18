@@ -2,17 +2,6 @@
 Here we take the Rancher route
 
 # Prepare Node and Host
-- Prepare Host (the laptop you'll use to control your nodes)
-    - install RKE 
-    ```
-        brew install rke
-    ```
-    *NOTE: you can check the current version of RKE [available from brew](https://formulae.brew.sh/formula/rke)*
-    - generate your cluster config
-    ```
-    rke --config
-    ```
-    or [use prepared template](./templates/rke-cluster.yaml)
 - Prepare Nodes (where kubernetes will run)
     - Install Docker [consult install reference](https://docs.docker.com/install/linux/docker-ce/ubuntu/) and [post install reference](https://docs.docker.com/install/linux/linux-postinstall/) according to [node requirements](https://rancher.com/docs/rancher/v2.x/en/installation/requirements/)
         ```
@@ -44,14 +33,19 @@ Here we take the Rancher route
         # NEED TO OPEN NEW TERMINAL TO TAKE EFFECT
         # Ensure installed right version: Ubuntu 18.04 (64-bit) works with Docker 18.09.x
         ```
+- Prepare Host (the laptop you'll use to control your nodes)
+    - install RKE 
+    ```
+        brew install rke
+    ```
 
 # Install Kubernetes
-Running the following installs kubernetes (assuming your doing it from the root of this project, ie, here)
+Running the following installs kubernetes using the [prepared template](./templates/rke-cluster.yaml)
 
 ```bash
     rke up --config ./templates/rke-cluster.yaml
 ```
-*you could also have generated the `rke-cluster.yaml` file, this command is based off of the [template](./templates/rke-cluster.yaml)*
+*you could have instead generated the `rke-cluster.yaml` file, this command is based off of the [template](./templates/rke-cluster.yaml)*
 
 RKE install outputs a config file (along with other [important files](https://rancher.com/docs/rke/latest/en/installation/#kubernetes-cluster-state) necessary for updating) in your the same working directy as the above yaml, you need to cp that to your `~/.kube/config` like so
 
