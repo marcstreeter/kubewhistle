@@ -45,14 +45,14 @@ Running the following installs kubernetes using the [prepared template](./templa
 ```bash
     rke up --config ./templates/rke-cluster.yaml
 ```
-*you could have instead generated the `rke-cluster.yaml` file, this command is based off of the [template](./templates/rke-cluster.yaml)*
+*read more about [important files](https://rancher.com/docs/rke/latest/en/installation/#kubernetes-cluster-state) it outputs*
 
-RKE install outputs a config file (along with other [important files](https://rancher.com/docs/rke/latest/en/installation/#kubernetes-cluster-state) necessary for updating) in your the same working directy as the above yaml, you need to cp that to your `~/.kube/config` like so
+#### Setup local laptop connection
+Copy output from install just performed to `~/.kube/config`:
 
-```
+```bash
 mkdir ~/.kube && cp ./templates/kube_config_rke-cluster.yaml ~/.kube/config
 ```
-
 Update your `~/.kube/config` file by changing the following `server: "https://192.168.1.211:6443"` to `server: "https://kubernetes:6443"`
 and add `192.168.1.211 kubernetes` to your `/etc/hosts` file (this could also be your public ip if you are forwarding traffic via HAProxy, for example)
 
