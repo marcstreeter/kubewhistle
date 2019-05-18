@@ -18,4 +18,5 @@ helm init --service-account tiller --history-max 200
 ```bash
 helm version
 ```
+*may take about 15 seconds to be ready*
 - For further use you may want to review [it's big concepts](https://helm.sh/docs/using_helm/#three-big-concepts)
