@@ -10,7 +10,7 @@ Here we take the kubespray route
         - If that fails, Refer [to locating pip](https://askubuntu.com/questions/1061486/unable-to-locate-package-python-pip-when-trying-to-install-from-fresh-18-04-in)
 - Ansible (Client) Preparation
     - Creat python virtual environment, activate
-        - `conda creat -n kubespray python=3`
+        - `conda create -n kubespray python=3`
         - `source activate kubespray`
     - Clone and Checkout a specific [version](https://github.com/kubernetes-sigs/kubespray/tags) of Kubespray
         - `git clone https://github.com/kubernetes-sigs/kubespray.git`
