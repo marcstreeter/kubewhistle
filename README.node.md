@@ -8,6 +8,7 @@ This preparation (like all files here) assumes you're running Ubuntu 18.04.  Thi
 
 # On each node simultaneously
 *suggested use of iTerm's `command`-`option`-`i`*
+
 First, copy over your ssh credentials
 ```
 ssh-copy-id <USERNAME>@<IP-ADDRESS-NOT-HOSTNAME-IN-HOSTS-FILE>
