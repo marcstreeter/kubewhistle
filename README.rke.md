@@ -24,14 +24,24 @@ Here we take the Rancher route
              curl \
              gnupg-agent \
              software-properties-common
+        ```
+        then
+        ```bash
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
         sudo add-apt-repository \
              "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
              $(lsb_release -cs) \
              stable"
         sudo apt-get update
+        ```
+        then
+        ```bash
         sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+        ```
+        finally
+        ```bash
         sudo usermod -aG docker $USER
+        ```
         # NEED TO OPEN NEW TERMINAL TO TAKE EFFECT
         # Ensure installed right version: Ubuntu 18.04 (64-bit) works with Docker 18.09.x
         ```
