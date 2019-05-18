@@ -37,8 +37,13 @@ Here we take the kubespray route
             - Also example https://github.com/kubernetes-sigs/kubespray/issues/1430
     - PRE-CHECK node/master connectivity
         - Check to make sure that all are accessible
-        `ansible -i inventory/<YOUR_DIRECTORY>/inventory.ini all -m ping`
-    - RUN INSTALL `ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini cluster.yml -u marcstreeter`
+        ```bash
+        ansible -i inventory/<YOUR_DIRECTORY>/inventory.ini all -m ping
+        ```
+    - RUN INSTALL 
+    ```bash
+    ansible-playbook -b -v -i inventory/<YOUR_DIRECTORY>/inventory.ini cluster.yml -u marcstreeter
+    ```
     
     *instead of using `-u marcstreeter` you could instead up the `ansible.cfg` with [remote user](./templates/ansible.cfg)*
 ￼
