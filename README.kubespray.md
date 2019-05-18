@@ -10,17 +10,23 @@ Here we take the kubespray route
         - If that fails, Refer [to locating pip](https://askubuntu.com/questions/1061486/unable-to-locate-package-python-pip-when-trying-to-install-from-fresh-18-04-in)
 - Ansible (Client) Preparation
     - Creat python virtual environment, activate
-        - `conda create -n kubespray python=3`
-        - `source activate kubespray`
+      ```bash
+      conda create -n kubespray python=3
+      source activate kubespray
+      ```
     - Clone and Checkout a specific [version](https://github.com/kubernetes-sigs/kubespray/tags) of Kubespray
-        - `git clone https://github.com/kubernetes-sigs/kubespray.git`
-        - `cd ./kubespray`
-        - `git checkout tags/v2.10.0`
-        - `pip install -r requirements.txt`
+    ```bash
+    git clone https://github.com/kubernetes-sigs/kubespray.git
+    cd ./kubespray
+    git checkout tags/v2.10.0
+    pip install -r requirements.txt
+    ```
     - Establish Nodes/Masters
         - Update Ansible Hosts file [from tempate](./templates/inventory.ini)
-        - `cp -R sample XXXX`
-        - `vi inventory/XXXX/inventory.ini`
+        ```bash
+        cp -R inventory/sample inventory/XXXX
+        vi inventory/XXXX/inventory.ini
+        ```
     - Enable Helm
         - Update Ansible Config File [from template](./templates/ansible.cfg)
         - Makesure that `ansible.cfg` is specifying right user ( 
