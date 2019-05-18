@@ -1,6 +1,10 @@
 # Kubespray
 Here we take the kubespray route
 
+*currently broke waiting for input on following issues*
+- https://github.com/kubernetes-sigs/kubespray/pull/4783
+- https://github.com/kubernetes-sigs/kubespray/issues/4784
+
 # Ansible Prep
 - Ansible (Node) Preparation
     - Install python
