@@ -30,7 +30,7 @@ Simple guides to get you going to an onprem cluster that has many bells and whis
 │ ┏━━━━━━━━┓ │◀───────────────┃   └ ─ ─ ─ ─ ─ ┘   ┃────────────▶│ ┃ NODE 1 ┃ │
 │ ┃ NODE 3 ┃ │                ┃                RPi┃             │ ┗━━━━━━━━┛ │
 │ ┗━━━━━━━━┛ │                ┗━━━━━━━━━━━━━━━━━━━┛             │            │
-└────────────┘                                                  └────────────┘                                
+└────────────┘                                                  └────────────┘
 ```
 
 # Node Preparation
