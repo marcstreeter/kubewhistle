@@ -17,7 +17,7 @@ Update the following options
 sudo apt install vim
 ```
 # Make IP Static (Based on [this answer](https://raspberrypi.stackexchange.com/a/74428))
-Edit `/etc/dhcpcd.conf` with contents of [template](./templates/dhcpcd.conf)
+Edit `/etc/dhcpcd.conf` with contents of [template](./templates/dhcpcd.conf) and then restart.
 
 *find router ip with `ip route | grep default | awk '{print $3}'`*
 
