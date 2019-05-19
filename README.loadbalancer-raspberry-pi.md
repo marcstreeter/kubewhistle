@@ -22,4 +22,8 @@ Edit `/etc/dhcpcd.conf` with contents of [template](./templates/dhcpcd.conf)
 *find router ip with `ip route | grep default | awk '{print $3}'`*
 
 # Install HAProxy
-[Follow HAProxy Guide](./README.haproxy.md)
+After installing HAProxy
+```bash
+sudo apt install haproxy
+```
+[Follow HAProxy the Guide](./README.haproxy.md) to enable it as a loadbalancer.
