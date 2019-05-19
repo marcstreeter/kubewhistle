@@ -1,12 +1,12 @@
 # HAProxy
-This is our load balancer for onprem. It is external to the cluster and will need to be updated as nodes are added etc. Make no mistake this is rudimentary and is not the option you want to take when deploying this in the cloud or even on premise as there are much better options.  But I'm doing this anyway :D 
+This is our load balancer for onprem. Note: **there probably is a better way**. 
 
 # TLDR
 #### Enable HAProxy
 You want to make sure that HAProxy turns on after rebooting your server
 
 #### Configure HAProxy
-Set your `/etc/haproxy/haproxy.cfg` to the contents of the (template)[./templates/haproxy.cfg] and restart haproxy
+Set your `/etc/haproxy/haproxy.cfg` to the contents of the [template](./templates/haproxy.cfg) and restart haproxy
 ```
 sudo systemctl restart haproxy
 ```
