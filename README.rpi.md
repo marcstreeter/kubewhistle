@@ -1,4 +1,4 @@
-# Loadbalancer: RaspberryPi
+# Prepare: RaspberryPi
 After installing fresh copy of Raspian Stretch Lite
 
 # Update basic config
@@ -20,10 +20,3 @@ sudo apt install vim
 Edit `/etc/dhcpcd.conf` with contents of [template](./templates/dhcpcd.conf) and then restart.
 
 *find router ip with `ip route | grep default | awk '{print $3}'`*
-
-# Install HAProxy
-After installing HAProxy
-```bash
-sudo apt install haproxy
-```
-[Follow HAProxy the Guide](./README.haproxy.md) to enable it as a loadbalancer.
