@@ -2,8 +2,8 @@
 Here we take the kubespray route
 
 *currently broke waiting for input on following issues*
-- https://github.com/kubernetes-sigs/kubespray/pull/4783
-- https://github.com/kubernetes-sigs/kubespray/issues/4784
+- https://github.com/kubernetes-sigs/kubespray/pull/4783 [MERGED]
+- https://github.com/kubernetes-sigs/kubespray/issues/4784 [MERGING]
 
 # Ansible Prep
 - Ansible (Node) Preparation
