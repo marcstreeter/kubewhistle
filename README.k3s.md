@@ -20,9 +20,10 @@ sudo chown root:root k3s.service && \
 sudo chmod 777 k3s.service && \
 sudo mv k3s.service /etc/systemd/system/k3s.service
 ```
-- Add Raspberry Pi specific settings
+- Add Raspberry Pi specific settings and restart
 ```bash
 echo -n " cgroup_memory=1 cgroup_enable=memory" | sudo tee -a /boot/cmdline.txt
+sudo shutdown -r now
 ```
 
 # Server Creation
