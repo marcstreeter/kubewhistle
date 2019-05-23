@@ -1,5 +1,21 @@
 # K3S: Kubernetes IoT (We're using RPi's)
-This ~~plagiarized~~ [inspired](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) guide get's you going with a cluster of Raspberry Pi's using Raspian Stretch Lite.
+This ~~plagiarized~~ [inspired](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) guide get's you going with a cluster of Raspberry Pi's using Raspian Stretch Lite, driven by your laptop.
+```bash
+┌─workers────┐                                                ╔═══════════════╗     
+│ ┏━━━━━━━━┓ │                                                ║ > kubectl...  ║     
+│ ┃WORKER 1┃◀┼────────┐         ┌─master ────┐                ║               ║     
+│ ┗━━━━━━━━┛ │        │         │            │                ║               ║     
+│ ┏━━━━━━━━┓ │        │         │ ┏━━━━━━━━┓ │       ┌────────║               ║     
+│ ┃WORKER 2┃◀┼────────┼─────────┼▶┃ NODE 1 ┃ │◀──────┘        ║               ║     
+│ ┗━━━━━━━━┛ │        │         │ ┗━━━━━━━━┛ │                ║               ║     
+│    ...     │        │         │            │                ║               ║     
+│ ┏━━━━━━━━┓ │        │         └────────────┘                ╚═══════════════╝     
+│ ┃WORKER N┃◀┼────────┘                                      /.-.-.-.-.-.-.-.-.\    
+│ ┗━━━━━━━━┛ │                                              /.-.-.-.-.-.-.-.-.-.\   
+└────────────┘                                             /.-.-.-.-.-.-.-.-.-.-.\  
+                                                          /______/__________\___o_\ 
+                                                          \_______________________/ 
+```
 
 # Initial Preparation
 After initial preparation
@@ -20,37 +36,25 @@ sudo shutdown -r now
 
 # Installation of [K3S](https://k3s.io)([git](https://github.com/rancher/k3s))
 
-
-## General Installation
-Download and install latest release of k3s (which establishes systemd unit aswell)
+### Master Initialization
 ```bash
 curl -sfL https://get.k3s.io | sh -
 ```
-### Master Initialization
+After installation finishes, copy the token for worker installation
 ```bash
-sudo k3s server
+sudo cat /var/lib/rancher/k3s/server/node-token
 ```
-
 ### Worker(s) Installation
-On each Raspberry Pi device in your cluster do the following:
-- Download K3S v0.5 ([or latest](https://github.com/rancher/k3s/releases))
+On each Raspberry Pi device in your cluster do the following, substituting your details:
 ```bash
-wget -O k3s https://github.com/rancher/k3s/releases/download/v0.5.0/k3s-armhf && \
-chmod +x k3s && \
-sudo mv k3s /usr/local/bin/k3s
-```
-- Install systemd service
-```bash
-wget https://raw.githubusercontent.com/rancher/k3s/master/k3s.service && \
-sudo chown root:root k3s.service && \
-sudo chmod 777 k3s.service && \
-sudo mv k3s.service /etc/systemd/system/k3s.service
+curl -sfL https://get.k3s.io | K3S_TOKEN=<TOKEN-YOU-COPIED> K3S_URL=https://<YOUR-SERVER-IP>:6443 sh -
 ```
 
+# Laptop Preparation
+Most likely you'll want to drive the RPi cluster from a laptop. From your laptop run
 
-# Server Creation
-K3S is meant for single master (not HA). On your master 
 ```bash
-sudo k3s server
+mkdir ~/.kube
+scp pi@192.168.1.141:/etc/rancher/k3s/k3s.yaml ~/.kube/config
+vi ~/.kube/config  # replace 'localhost' with k3s server ip (i.e 192.168.1.141)
 ```
-
