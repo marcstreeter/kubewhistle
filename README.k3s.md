@@ -10,9 +10,10 @@ Also add k3s specific settings and restart
 ```bash
 cp /boot/cmdline.txt ~/cmdline.txt # copy the original in case there are mistakes
 sudo python -c "
-p='/boot/cmdline.txt'
-v=open(p,'r').read()
-open(p,'w').write('%s cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory\n' % v.strip())
+options = 'cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
+path = '/boot/cmdline.txt'
+value = open(path,'r').read()
+open(path,'w').write('{0} {1}\n'.format(value.strip, options))
 "
 sudo shutdown -r now
 ```
