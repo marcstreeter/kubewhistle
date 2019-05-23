@@ -1,11 +1,36 @@
 # K3S: Kubernetes IoT (We're using RPi's)
-This guide get's you going with a cluster of Raspberry Pi's using Raspian Stretch Lite.
+This ~~plagiarized~~ [inspired](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) guide get's you going with a cluster of Raspberry Pi's using Raspian Stretch Lite.
 
 # Initial Preparation
+After initial preparation
 - [Prepare Raspberry Pi's](./README.rpi.md)
 - [Make sure one is your load balancer](./README.loadbalancer.md)
 
+Also add k3s specific settings and restart
+```bash
+cp /boot/cmdline.txt ~/cmdline.txt # copy the original in case there are mistakes
+sudo python -c "
+p='/boot/cmdline.txt'
+v=open(p,'r').read()
+open(p,'w').write('%s cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory\n' % v.strip())
+"
+sudo shutdown -r now
+```
+
 # Installation of [K3S](https://k3s.io)([git](https://github.com/rancher/k3s))
+
+
+## General Installation
+Download and install latest release of k3s (which establishes systemd unit aswell)
+```bash
+curl -sfL https://get.k3s.io | sh -
+```
+### Master Initialization
+```bash
+sudo k3s server
+```
+
+### Worker(s) Installation
 On each Raspberry Pi device in your cluster do the following:
 - Download K3S v0.5 ([or latest](https://github.com/rancher/k3s/releases))
 ```bash
@@ -20,11 +45,7 @@ sudo chown root:root k3s.service && \
 sudo chmod 777 k3s.service && \
 sudo mv k3s.service /etc/systemd/system/k3s.service
 ```
-- Add Raspberry Pi specific settings and restart
-```bash
-echo -n " cgroup_memory=1 cgroup_enable=memory" | sudo tee -a /boot/cmdline.txt
-sudo shutdown -r now
-```
+
 
 # Server Creation
 K3S is meant for single master (not HA). On your master 
