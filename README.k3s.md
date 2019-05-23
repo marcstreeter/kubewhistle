@@ -50,8 +50,9 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 ### Worker(s) Installation
 On each Raspberry Pi device in your cluster do the following, substituting your details:
 ```bash
-curl -sfL https://get.k3s.io | K3S_TOKEN=<TOKEN-YOU-COPIED> K3S_URL=https://<YOUR-SERVER-IP>:6443 sh -
+curl -sfL https://get.k3s.io | K3S_TOKEN=<TOKEN> K3S_URL=https://<SERVER-IP>:6443 sh -
 ```
+*substitute your unique token and ip*
 
 # Laptop Preparation
 Most likely you'll want to drive the RPi cluster from a laptop. From your laptop run
