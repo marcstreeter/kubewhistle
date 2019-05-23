@@ -13,7 +13,7 @@ sudo python -c "
 options = 'cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
 path = '/boot/cmdline.txt'
 value = open(path,'r').read()
-open(path,'w').write('{0} {1}\n'.format(value.strip, options))
+open(path,'w').write('{0} {1}\n'.format(value.strip(), options))
 "
 sudo shutdown -r now
 ```
