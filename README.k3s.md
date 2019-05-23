@@ -46,13 +46,14 @@ After installation finishes, copy the token for worker installation
 ```bash
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
-*this just shows the token, you'll need to copy it over in the next steps*
+*NOTE: this just shows the token, you'll need to copy it over in the next steps*
+
 ### Worker(s) Installation
 On each Raspberry Pi device in your cluster do the following, substituting your details:
 ```bash
 curl -sfL https://get.k3s.io | K3S_TOKEN=<TOKEN> K3S_URL=https://<SERVER-IP>:6443 sh -
 ```
-*substitute your unique token and ip*
+*NOTE: substitute your unique token and ip*
 
 # Laptop Preparation
 Most likely you'll want to drive the RPi cluster from a laptop. From your laptop run
