@@ -46,6 +46,7 @@ After installation finishes, copy the token for worker installation
 ```bash
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
+*this just shows the token, you'll need to copy it over in the next steps*
 ### Worker(s) Installation
 On each Raspberry Pi device in your cluster do the following, substituting your details:
 ```bash
