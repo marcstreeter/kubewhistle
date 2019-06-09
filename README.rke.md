@@ -30,7 +30,7 @@ Here we take the Rancher route
         finally
         ```bash
         sudo usermod -aG docker $USER
-        # NEED TO OPEN NEW TERMINAL TO TAKE EFFECT
+        # NEED TO OPEN RESTART TO TAKE EFFECT
         # Ensure installed right version: Ubuntu 18.04 (64-bit) works with Docker 18.09.x
         ```
 - Prepare Host (the laptop you'll use to control your nodes)
