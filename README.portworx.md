@@ -52,7 +52,7 @@ sudo shutdown -r now
 
 ### Install Portworx
 
-Generate the kubectl manifest by providing these options
+Generate the kubectl manifest by providing these options to the [portwork manifest generator](https://install.portworx.com)
 ```
 Kubernetes Version: 1.13.5
 ETCD: Built-In
@@ -66,12 +66,10 @@ Management Network Interface: auto
 
 Are you running either of these? None
 ```
-Now apply the manifest with the provided link which for me was [pgenerated](https://install.portworx.com) as 
-[this template](./templates/portworx.yaml) and can be applied like so:
+Now apply the generated manifest with the provided link (or by running [this template](./templates/portworx.yaml) locally) like so:
 ```
 kubectl apply -f 'https://install.portworx.com/2.0?mc=false&kbver=1.13.5&b=true&s=%2Fdev%2Fportworx&c=px-cluster-0a5a3ba8-c5b0-40f6-820a-15488019f76f&stork=true&lh=true&st=k8s'
 ```
-*or by using the template directly*
 
 ### Validate install
 
