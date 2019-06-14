@@ -83,3 +83,12 @@ Then run the following on all of you portworx nodes:
 /usr/local/bin/pxctl status
 ```
 should output all drives from all computers
+
+### Test install
+
+You can see the lighthouse UI
+
+```
+kubectl port-forward <PODNAME>  31684:80 -n kube-system
+```
+*Then connect to the UI locally http://127.0.0.1:31684/login*
