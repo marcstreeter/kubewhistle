@@ -56,7 +56,14 @@ mkdir ~/.kube && cp ./templates/kube_config_rke-cluster.yaml ~/.kube/config
 Update your `~/.kube/config` file by changing the following `server: "https://192.168.1.211:6443"` to `server: "https://kubernetes:6443"`
 and add `192.168.1.211 kubernetes` to your `/etc/hosts` file (this could also be your public ip if you are forwarding traffic via HAProxy, for example)
 
-# Install Rancher
+# Install Rancher (for local access only)
+Run it from your laptop
+```
+docker run -p 80:80 -p 443:443 rancher/rancher
+```
+Setup should be accessible via `https://<YOUR-LAPTOP-IP>/` (which should be accessible from your nodes). Use the URL it provides for the manifest.
+
+# Install Rancher (for remote access)
 
 - Install helm from [Helm README](./README.helm.md)
 
@@ -82,3 +89,4 @@ helm install rancher-stable/rancher \
 - Should be able to hit the site without problems (if you do, purge rancher chart and retry: v2.2.3 works!)
     - https://rancher.kube.watch/
 - After setting up your admin username/password it will take ~5 minutes for the cluster to go to a ready state
+
