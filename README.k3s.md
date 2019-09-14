@@ -63,3 +63,7 @@ mkdir ~/.kube
 scp pi@192.168.1.141:/etc/rancher/k3s/k3s.yaml ~/.kube/config
 vi ~/.kube/config  # replace 'localhost' with k3s server ip (i.e 192.168.1.141)
 ```
+
+### Other Art
+Started noticing another place that has some more steps
+- https://github.com/bbruun/k3s-getting-started
