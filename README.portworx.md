@@ -49,7 +49,7 @@ Reboot, to give it a chance to create your symlinks
 ```
 sudo shutdown -r now
 ```
-### Prepare nodes
+#### Prepare nodes
 Because we are using the builtin option for the etcd component of portworx, we need to label nodes with `px/metadata-node=true` like so([see template](./templates/portworx-node-labels.yaml)):
 ```bash
 kubectl label nodes <your-node-name> px/metadata-node=true
