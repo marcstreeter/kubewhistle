@@ -1,10 +1,3 @@
-# Current Issues
-These may block your desire to install rook
-
-- https://github.com/rook/rook/issues/3157
-- 
-
-
 # Install Rook
 
 Assuming you've prepared your cluster for rook as mentioned in the other README's.
@@ -22,7 +15,7 @@ sudo shutdown -r now
 ```
 git clone https://github.com/rook/rook.git
 cd rook
-git checkout tags/v1.0.0
+git checkout tags/v1.1.1
 cd cluster/examples/kubernetes/ceph
 ```
 - Install slowly checking to make sure everything finishes before moving onto the next step
@@ -38,10 +31,11 @@ kubectl appy -f cluster.yaml
 ```
 
 - interesting CEPH links
-    - https://github.com/rook/rook/blob/v1.0.0/Documentation/ceph-cluster-crd.md
-    - https://github.com/rook/rook/blob/v1.0.0/Documentation/ceph-quickstart.md
+    - https://github.com/rook/rook/blob/v1.1.1/Documentation/ceph-cluster-crd.md
+    - https://github.com/rook/rook/blob/v1.1.1/Documentation/ceph-quickstart.md
     - https://forums.rancher.com/t/rancher-2-x-rook-io-problem/10503/8
-    - https://rook.io/docs/rook/v1.0/flexvolume.html#platform-specific-flexvolume-path
+    - https://rook.io/docs/rook/v1.1/flexvolume.html#platform-specific-flexvolume-path
+    - https://github.com/rook/rook/blob/master/Documentation/ceph-dashboard.md
 
 # Create default storage class
 If you want a default storage class set it using  the, [storage-class.yaml](./manifests/storage-class.yaml), manifest which applies the required annotation
@@ -55,7 +49,6 @@ kubectl get sc
 *based on https://rook.io/docs/rook/v1.0/ceph-block.html (removed `fstype: xfs` line to default instead to ext4)*
 
 # Enable External Ceph Dashboard
-*dashboard [isn't working](https://github.com/rook/rook/issues/3106) with v1.0.0*
 Using the ingress controller 
 
 ```
