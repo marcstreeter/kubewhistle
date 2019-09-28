@@ -1,4 +1,4 @@
-# Portworx
+# Portworx (does not support k3s at this moment)
 So you want to try portworx storage eh?
 
 ### Pre-requisites
@@ -59,7 +59,7 @@ kubectl label nodes <your-node-name> px/metadata-node=true
 Generate the kubectl manifest by providing these options to the [portwork manifest generator](https://install.portworx.com)
 ```
 Kubernetes Version: 1.13.5
-ETCD: Built-In
+ETCD: Built-In #label nodes for builtin kvdb using given command
 Select your environment: OnPrem
 Select type of OnPrem storage: Manually specify disks 
 Drive/Device: /dev/portworx  
