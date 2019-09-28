@@ -1,4 +1,6 @@
-# Portworx (does not support k3s at this moment)
+# Portworx
+*note: does not support k3s at this moment*
+
 So you want to try portworx storage eh?
 
 ### Pre-requisites
@@ -96,3 +98,7 @@ You can see the lighthouse UI
 kubectl port-forward <PODNAME>  31684:80 -n kube-system
 ```
 *Then connect to the UI locally http://127.0.0.1:31684/login*
+
+### Helpful Links
+- [Uninstall](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/uninstall/#delete-wipe-px-cluster-configuration)
+- [Troubleshoot](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/troubleshooting/troubleshoot-and-get-support/#useful-commands)
