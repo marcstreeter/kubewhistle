@@ -29,3 +29,10 @@ Apply the following to prevent issues with Traefik or other networking
 sudo iptables -F
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 ```
+
+
+## OTHER USEFUL LINKS
+
+- [swap off](https://askubuntu.com/a/1231494)
+- [swap off again?](https://serverfault.com/a/994813)
+- [more swap off](https://www.raspberrypi.org/forums/viewtopic.php?t=244130#p1490692)
