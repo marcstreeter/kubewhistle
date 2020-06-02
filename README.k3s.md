@@ -24,10 +24,9 @@ After initial preparation
 - [Prepare Raspberry Pi's](./README.rpi.md)
 - [Make sure one is your load balancer](./README.loadbalancer.md)
 
-Also add k3s specific settings and restart
+Also add k3s specific settings and restart(note: `boot/cmdline.txt` may be [`boot/firmware/cmdline.txt`](https://github.com/rancher/k3s/issues/1078))
 ```bash
 cp /boot/cmdline.txt ~/cmdline.txt # copy the original in case there are mistakes
-# file is `/boot/firmware/cmdline.txt` in ubuntu 20LTS arm
 sudo python -c "
 options = 'cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
 path = '/boot/cmdline.txt'
