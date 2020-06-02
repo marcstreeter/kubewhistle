@@ -27,6 +27,7 @@ After initial preparation
 Also add k3s specific settings and restart
 ```bash
 cp /boot/cmdline.txt ~/cmdline.txt # copy the original in case there are mistakes
+# may need to update `/boot/firmware/cmdline.txt` instead
 sudo python -c "
 options = 'cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
 path = '/boot/cmdline.txt'
@@ -35,7 +36,6 @@ open(path,'w').write('{0} {1}\n'.format(value.strip(), options))
 "
 sudo shutdown -r now
 ```
-*may need to update `/boot/firmware/cmdline.txt` instead for ubuntu RPi's*
 
 # Installation of [K3S](https://k3s.io)([git](https://github.com/rancher/k3s))
 
