@@ -35,6 +35,7 @@ open(path,'w').write('{0} {1}\n'.format(value.strip(), options))
 "
 sudo shutdown -r now
 ```
+*may need to update `/boot/firmware/cmdline.txt` instead for ubuntu RPi's*
 
 # Installation of [K3S](https://k3s.io)([git](https://github.com/rancher/k3s))
 
