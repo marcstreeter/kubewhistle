@@ -27,7 +27,7 @@ After initial preparation
 Also add k3s specific settings and restart
 ```bash
 cp /boot/cmdline.txt ~/cmdline.txt # copy the original in case there are mistakes
-# may need to update `/boot/firmware/cmdline.txt` instead
+# file is `/boot/firmware/cmdline.txt` in ubuntu 20LTS arm
 sudo python -c "
 options = 'cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
 path = '/boot/cmdline.txt'
